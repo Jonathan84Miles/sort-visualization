@@ -1,0 +1,13 @@
+#barContainer{
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+    width: 1200px;
+    background-color: black;
+}
+.bar{
+    height: 40px;
+    background-color: blue;
+    display: inline-block;
+    margin-right: 1px;
+}
