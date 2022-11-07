@@ -1,3 +1,6 @@
+import { swapElements } from "./common.js";
+import { changeElementColor } from "./common.js";
+
 let speedSlider = document.getElementById("speedSlider");
 let speed = speedSlider.value;
 
@@ -58,15 +61,19 @@ export async function mergeSort(arr, n) {
             k = left_start;
             while (i < n1 && j < n2) {
                 if (L[i] <= R[j]) {
+                    changeElementColor(k, "red");
                     await delay(speed);
                     changeElementHeight(k, L[i]);
+                    changeElementColor(k, "blue");
                     await delay(speed);
 
                     arr[k] = L[i];
                     i++;
                 } else {
+                    changeElementColor(k, "red");
                     await delay(speed);
                     changeElementHeight(k, R[j]);
+                    changeElementColor(k, "blue");
                     await delay(speed);
                     arr[k] = R[j];
                     j++;
@@ -78,6 +85,7 @@ export async function mergeSort(arr, n) {
              * Copy the remaining elements of L, if there are any
              */
             while (i < n1) {
+                
                 await delay(speed);
                 changeElementHeight(k, L[i]);
                 await delay(speed);
